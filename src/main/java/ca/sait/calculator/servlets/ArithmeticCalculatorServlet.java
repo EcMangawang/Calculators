@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author emmari
  */
-public class AgeCalculatorServlet extends HttpServlet {
+public class ArithmeticCalculatorServlet extends HttpServlet {
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -23,7 +23,7 @@ public class AgeCalculatorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request,response);
     }
 
     /**
@@ -37,19 +37,6 @@ public class AgeCalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (request.getParameter ("age") != null) {
-            try {
-            String ageString = request.getParameter("age");
-            int age = Integer.parseInt(ageString);
-            int ageNextBirthday = age + 1;
-            
-            request.setAttribute("message", "You will be " + ageNextBirthday + " after your next birthday.");
-            } catch (Exception ex) {
-                request.setAttribute("message", "You must give your current age.");
-            }
-        } else {
-            request.setAttribute("message", "You must enter a number.");
-        }
-        getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request,response);
     }
 }
