@@ -13,5 +13,7 @@
     </head>
     <body>
         <h1>Arithmetic Calculator</h1>
+        
+        <form action="arithmetic" method="post"
     </body>
 </html>
